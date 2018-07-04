@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>yml</title>
+<!--引入开始-->
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="http://www.5imoban.net/download/jquery/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+<!--引入结束-->
+<style>
+body{margin:0; padding:0;}
+ul#wimoban_nav{padding-left:50px; margin-bottom:10px; border-bottom:2px solid #ccc; overflow:hidden; _zoom:1;}
+ul#wimoban_nav li{float:left; display:inline; margin:10px;}
+ul#wimoban_nav li a{display:block; font-size:16px;}
+ul#wimoban_nav li a,#wimoban_p,#wimoban_p a{color:#000; font-family:"微软雅黑";}
+ul#wimoban_nav li a:hover,#wimoban_p a:hover{color:red;}
+#wimoban_p{text-align:center; font-size:14px; clear:both;}
+</style>
+</head>	
+<body oncontextmenu='return false' ondragstart='return false'>
+<!-- 代码开始 -->
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">/**</span><br />
+			<span class="space"/><span class="comments">*2018-05-17,</span><br />
+			<span class="space"/><span class="comments">*2018-07-05.</span><br />
+			<span class="space"/><span class="comments">*/</span><br />
+			男孩名叫 = <span class="keyword">Mr</span>  袁茂林 <br />
+			女孩名叫 = <span class="keyword">Mrs</span> 阳茂璐 <br />
+
+
+			<span class="comments"></span><br/>
+			<span class="comments">// 初识 </span><br />
+			他在中国成都<br/>
+			她在美国盐湖城<br/>
+			他们时差相差<span class="keyword">10小时</span><br/>
+			他们只是在成都早上，盐湖城晚上时间聊一下天<br/>
+			她知道他是一个程序员<br/>
+			他知道她是一名英语老师<br/>
+			他们只是隔三差五的聊聊并没有深入的交流<br/>
+
+			<br/>
+			<span class="comments">// 第一次吃饭 </span><br />
+			<span class="keyword">很快</span>，女孩从美国回来<br/>
+			男孩迫不及待地想请女孩吃饭<br/>
+			<span class="keyword">但是</span>，由于男孩的安排不妥，饭并没有吃成<br/>
+			女孩没有生气，还很高兴的答应了下次<br/>
+
+
+			<br/>
+			<span class="comments">// 第二次吃饭 </span><br />
+			男孩早早的到吃饭的地方，但由于店铺装修，临时又换了一个地方<br/>
+			期间两人聊得还挺开心<br/>
+			<span class="keyword">但</span>，男孩有个小动作直到饭后才发现<br/>
+			那就是，男孩不停地玩着放筷子的垫子，并没有认真<span class="keyword">分享</span><br/>
+			总结起来，男孩就是一次很<span class="keyword">失败</span>的见面<br/>
+
+			<br/>
+
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					Honey, this is the time when we love each other.
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					Love you forever and ever.<br/>
+					<div class="signature">- Fly</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+// var offsetX = $("#loveHeart").width() / 2;
+// var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+// together.setFullYear(2013, 2, 28);
+// together.setHours(20);
+// together.setMinutes(0);
+// together.setSeconds(0);
+// together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+<!-- 代码结束 -->
+</div>
+</body>
+</html>
